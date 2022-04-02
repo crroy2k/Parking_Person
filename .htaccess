@@ -1,0 +1,9 @@
+#IMPEDIR VER LISTADO DE CONTENIDOS
+
+Options All -Indexes
+
+#URL AMIGABLES
+
+RewriteEngine on
+
+RewriteRule ^([A-Za-z0-9\&\=\_]+)$ index.php?action=$1
