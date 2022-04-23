@@ -146,7 +146,7 @@ if (isset($_SESSION)) {
                         <p>2021 &copy; Mazer</p>
                     </div>
                     <div class="float-end">
-                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by <a href="https://www.instagram.com/urena_r17/?hl=es-la">Roy</a></p>
+                        <p>Crafted with <span class="text-danger"><i class="bi bi-heart"></i></span> by </p>
                     </div>
                 </div>
             </footer>

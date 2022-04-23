@@ -166,8 +166,7 @@ class MvcController
                     $respuesta = Datos::editarUsuarioModel($datos, "usuarios");
                     echo '
                                   <input type="hidden" name="id" value="' . $respuesta["id"] . '" required>
-                                  <a class="btn btn-warning returnUsuarios rounded-pill"><i class="fas fa-arrow-left"></i>Volver</a>
-                                    
+                                  <a class="btn btn-warning returnUsuarios rounded-pill" href="parqueo"><i class="fas fa-arrow-left"></i>Volver</a>
                                   <div class="form-group">
                                         <label for="nombre">Nombre:</label>
                                     
@@ -175,7 +174,7 @@ class MvcController
                                     
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text bg-warning">
-                                                    <i class="fas fa-user text-dark"></i>
+                                                    <i class="fas fa-user text-dark">Nombre</i>
                                                 </span>
                                             </div>
                                         <input type="text" class="form-control" name="nombre" value="' . $respuesta["nombre"] . '" required>
@@ -189,7 +188,7 @@ class MvcController
                                     
                                            <div class="input-group-prepend">
                                                <span class="input-group-text bg-warning">
-                                                   <i class="fas fa-lock text-dark"></i>
+                                                   <i class="fas fa-lock text-dark">Nombre</i>
                                                </span>
                                            </div>
                                         <input type="password" class="form-control" name="password" required>
@@ -203,13 +202,13 @@ class MvcController
                                     
                                            <div class="input-group-prepend">
                                                <span class="input-group-text bg-warning">
-                                                    <i class="fas fa-envelope text-dark"></i>
+                                                    <i class="fas fa-envelope text-dark">Email</i>
                                                </span>
                                            </div>
                                            <input type="email"  class="form-control" name="email" value="' . $respuesta["email"] . '" required>
                                        </div>
                                   </div>
-                                  <button type="submit" class="btn btn-warning rounded-pill"><i class="fas fa-pencil-alt"></i></button>
+                                  <button type="submit" class="btn btn-warning rounded-pill"><i class="fas fa-pencil-alt"></i>Aplicar</button>
                                  ';
                 } else {
                     echo '<script>
@@ -450,10 +449,10 @@ class MvcController
                     $h_entrada = Datos::traerHEntradaModel($datos);
                     $h_actual = date("H:i:s", time());
                     $horasActivo= self::calculoHoras($h_entrada);
-
-                    $pago = $horasActivo * 2000;
-
-                    echo '
+                    $pago = 1000 + $horasActivo * 1500;
+                   
+                
+                  echo '
                                   <input type="hidden" name="id" value="' . $respuesta["id"] . '" required>
                                   <a class="btn btn-warning returnUsuarios rounded-pill" href= parqueo ><i class="fas fa-arrow-left"></i>Volver</a>
                                     
@@ -546,7 +545,9 @@ class MvcController
 
         $diff = $h_salida - $h_entradas;
 
+        
         return round(abs($diff) / 3600);
+        
     }
 
 

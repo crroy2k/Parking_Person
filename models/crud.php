@@ -148,12 +148,4 @@ class Datos extends Conexion
             $stnt->errorInfo();
         }
     }
-
-   
-
-
  }
-
-
-
-
